@@ -83,6 +83,9 @@ Useful knobs:
 # Gameplay smoke test: walking, talking, signs, portals, bridge, every map
 godot --headless --path . res://tools/smoke_test.tscn
 
+# Automated tour of every map, recorded to a video
+godot --path . --fixed-fps 30 --write-movie /tmp/tour.avi res://tools/demo.tscn
+
 # Screenshots: map id, output folder, then camera poses as "x,y,z,target_x,target_y,target_z"
 godot --path . res://tools/screenshot.tscn -- meadow_village /tmp player "0,30,45,0,2,0"
 ```
