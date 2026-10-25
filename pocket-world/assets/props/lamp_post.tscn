@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/metal.tres" id="1_metal"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/glow_yellow.tres" id="2_glow_yellow"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1"]
+radius = 0.15
+height = 3.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.12
+bottom_radius = 0.18
+height = 0.3
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3"]
+top_radius = 0.06
+bottom_radius = 0.06
+height = 3
+radial_segments = 6
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_4"]
+radius = 0.26
+height = 0.52
+radial_segments = 12
+rings = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0
+bottom_radius = 0.32
+height = 0.25
+radial_segments = 8
+rings = 1
+
+[node name="lamp_post" type="StaticBody3D"]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+shape = SubResource("CylinderShape3D_1")
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("CylinderMesh_2")
+surface_material_override/0 = ExtResource("1_metal")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("1_metal")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 0)
+mesh = SubResource("SphereMesh_4")
+surface_material_override/0 = ExtResource("2_glow_yellow")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, 0)
+mesh = SubResource("CylinderMesh_5")
+surface_material_override/0 = ExtResource("1_metal")

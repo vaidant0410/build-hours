@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/orange.tres" id="1_orange"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1"]
+radius = 0.12
+height = 0.24
+radial_segments = 6
+rings = 3
+
+[node name="starfish_orange" type="Node3D"]
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.8, 0, 0, 0, 0.35, 0, 0, 0, 0.7, 0.12, 0.03, 0)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_orange")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5562, 0, -0.6657, 0, 0.35, 0, 1.7119, 0, 0.2163, 0.0371, 0.03, 0.1141)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_orange")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.4562, 0, -0.4114, 0, 0.35, 0, 1.058, 0, -0.5663, -0.0971, 0.03, 0.0705)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_orange")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.4562, 0, 0.4114, 0, 0.35, 0, -1.058, 0, -0.5663, -0.0971, 0.03, -0.0705)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_orange")
+
+[node name="Mesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5562, 0, 0.6657, 0, 0.35, 0, -1.7119, 0, 0.2163, 0.0371, 0.03, -0.1141)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_orange")

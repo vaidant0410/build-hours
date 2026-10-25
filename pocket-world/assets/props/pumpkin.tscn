@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/pumpkin.tres" id="1_pumpkin"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/leaf_dark.tres" id="2_leaf_dark"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1"]
+radius = 0.3
+height = 0.6
+radial_segments = 10
+rings = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.04
+bottom_radius = 0.06
+height = 0.2
+radial_segments = 5
+rings = 1
+
+[node name="pumpkin" type="Node3D"]
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.9, 0, 0, 0, 1.1, 0.12, 0.28, 0)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_pumpkin")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.375, 0, -0.9526, 0, 0.9, 0, 0.6495, 0, 0.55, 0.06, 0.28, 0.1039)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_pumpkin")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.375, 0, -0.9526, 0, 0.9, 0, 0.6495, 0, -0.55, -0.06, 0.28, 0.1039)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_pumpkin")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.75, 0, 0, 0, 0.9, 0, 0, 0, -1.1, -0.12, 0.28, 0)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_pumpkin")
+
+[node name="Mesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.375, 0, 0.9526, 0, 0.9, 0, -0.6495, 0, -0.55, -0.06, 0.28, -0.1039)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_pumpkin")
+
+[node name="Mesh6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.375, 0, 0.9526, 0, 0.9, 0, -0.6495, 0, 0.55, 0.06, 0.28, -0.1039)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_pumpkin")
+
+[node name="Mesh7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.995, -0.0998, 0, 0.0978, 0.9752, -0.1987, 0.0198, 0.1977, 0.9801, 0, 0.6, 0)
+mesh = SubResource("CylinderMesh_2")
+surface_material_override/0 = ExtResource("2_leaf_dark")

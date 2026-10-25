@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/wood.tres" id="1_wood"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/wood_light.tres" id="2_wood_light"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1"]
+radius = 0.55
+height = 0.6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.45
+bottom_radius = 0.55
+height = 0.6
+radial_segments = 10
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3"]
+top_radius = 0.44
+bottom_radius = 0.44
+height = 0.02
+radial_segments = 10
+rings = 1
+
+[node name="stump" type="StaticBody3D"]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("CylinderShape3D_1")
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("CylinderMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61, 0)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("2_wood_light")

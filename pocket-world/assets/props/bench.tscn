@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/wood.tres" id="1_wood"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/metal.tres" id="2_metal"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(1.7, 0.9, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(1.7, 0.1, 0.55)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(1.7, 0.45, 0.08)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.1, 0.45, 0.5)
+
+[node name="bench" type="StaticBody3D"]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_1")
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9888, 0.1494, 0, -0.1494, 0.9888, 0, 0.78, 0.25)
+mesh = SubResource("BoxMesh_3")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.22, 0)
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = ExtResource("2_metal")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.22, 0)
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = ExtResource("2_metal")

@@ -1,0 +1,152 @@
+[gd_scene load_steps=17 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/snow.tres" id="1_snow"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/carrot.tres" id="2_carrot"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/black.tres" id="3_black"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/wood_dark.tres" id="4_wood_dark"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/red.tres" id="5_red"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1"]
+radius = 0.6
+height = 2.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_2"]
+radius = 0.62
+height = 1.24
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_3"]
+radius = 0.45
+height = 0.9
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_4"]
+radius = 0.33
+height = 0.66
+radial_segments = 14
+rings = 7
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0
+bottom_radius = 0.06
+height = 0.35
+radial_segments = 6
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_6"]
+radius = 0.04
+height = 0.08
+radial_segments = 6
+rings = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_7"]
+radius = 0.045
+height = 0.09
+radial_segments = 6
+rings = 3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8"]
+top_radius = 0.03
+bottom_radius = 0.03
+height = 0.9
+radial_segments = 5
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_9"]
+top_radius = 0.38
+bottom_radius = 0.38
+height = 0.04
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_10"]
+top_radius = 0.22
+bottom_radius = 0.22
+height = 0.38
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_11"]
+top_radius = 0.48
+bottom_radius = 0.48
+height = 0.12
+radial_segments = 12
+rings = 1
+
+[node name="snowman" type="StaticBody3D"]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+shape = SubResource("CylinderShape3D_1")
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("1_snow")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("1_snow")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95, 0)
+mesh = SubResource("SphereMesh_4")
+surface_material_override/0 = ExtResource("1_snow")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 1.95, -0.45)
+mesh = SubResource("CylinderMesh_5")
+surface_material_override/0 = ExtResource("2_carrot")
+
+[node name="Mesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, 2.05, -0.29)
+mesh = SubResource("SphereMesh_6")
+surface_material_override/0 = ExtResource("3_black")
+
+[node name="Mesh6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, 2.05, -0.29)
+mesh = SubResource("SphereMesh_6")
+surface_material_override/0 = ExtResource("3_black")
+
+[node name="Mesh7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.4343)
+mesh = SubResource("SphereMesh_7")
+surface_material_override/0 = ExtResource("3_black")
+
+[node name="Mesh8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -0.4572)
+mesh = SubResource("SphereMesh_7")
+surface_material_override/0 = ExtResource("3_black")
+
+[node name="Mesh9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, -0.3842)
+mesh = SubResource("SphereMesh_7")
+surface_material_override/0 = ExtResource("3_black")
+
+[node name="Mesh10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6216, -0.7833, 0, 0.7833, 0.6216, 0, 0, 0, 1, -0.6, 1.5, 0)
+mesh = SubResource("CylinderMesh_8")
+surface_material_override/0 = ExtResource("4_wood_dark")
+
+[node name="Mesh11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6216, 0.7833, 0, -0.7833, 0.6216, 0, 0, 0, 1, 0.6, 1.5, 0)
+mesh = SubResource("CylinderMesh_8")
+surface_material_override/0 = ExtResource("4_wood_dark")
+
+[node name="Mesh12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.22, 0)
+mesh = SubResource("CylinderMesh_9")
+surface_material_override/0 = ExtResource("3_black")
+
+[node name="Mesh13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42, 0)
+mesh = SubResource("CylinderMesh_10")
+surface_material_override/0 = ExtResource("3_black")
+
+[node name="Mesh14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68, 0)
+mesh = SubResource("CylinderMesh_11")
+surface_material_override/0 = ExtResource("5_red")

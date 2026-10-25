@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scenes/world/portal.gd" id="1_portal"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/stone.tres" id="2_stone"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/glow_white.tres" id="3_glow_white"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(2.6, 3.4, 1.4)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 1.6
+bottom_radius = 1.8
+height = 0.4
+radial_segments = 20
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 1.55
+outer_radius = 1.95
+rings = 32
+ring_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 1.56
+bottom_radius = 1.56
+height = 0.04
+radial_segments = 28
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_5"]
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[node name="Portal" type="Area3D"]
+script = ExtResource("1_portal")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_1")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("CylinderMesh_2")
+surface_material_override/0 = ExtResource("2_stone")
+
+[node name="Ring" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 2.3, 0)
+mesh = SubResource("TorusMesh_3")
+
+[node name="Swirl" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+
+[node name="Disk" type="MeshInstance3D" parent="Swirl"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource("CylinderMesh_4")
+
+[node name="Sparkle1" type="MeshInstance3D" parent="Swirl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, 0)
+mesh = SubResource("SphereMesh_5")
+surface_material_override/0 = ExtResource("3_glow_white")
+
+[node name="Sparkle2" type="MeshInstance3D" parent="Swirl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.9526, 0)
+mesh = SubResource("SphereMesh_5")
+surface_material_override/0 = ExtResource("3_glow_white")
+
+[node name="Sparkle3" type="MeshInstance3D" parent="Swirl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.9526, 0)
+mesh = SubResource("SphereMesh_5")
+surface_material_override/0 = ExtResource("3_glow_white")
+
+[node name="Sparkle4" type="MeshInstance3D" parent="Swirl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0)
+mesh = SubResource("SphereMesh_5")
+surface_material_override/0 = ExtResource("3_glow_white")
+
+[node name="Sparkle5" type="MeshInstance3D" parent="Swirl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, -0.9526, 0)
+mesh = SubResource("SphereMesh_5")
+surface_material_override/0 = ExtResource("3_glow_white")
+
+[node name="Sparkle6" type="MeshInstance3D" parent="Swirl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, -0.9526, 0)
+mesh = SubResource("SphereMesh_5")
+surface_material_override/0 = ExtResource("3_glow_white")
+
+[node name="Label" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0)
+billboard = 1
+pixel_size = 0.006
+font_size = 64
+outline_size = 18
+outline_modulate = Color(0.15, 0.1, 0.25, 1)
+text = "To ..."
+
+[node name="Glow" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+light_color = Color(0.6, 0.85, 1, 1)
+light_energy = 1.5
+omni_range = 6.0

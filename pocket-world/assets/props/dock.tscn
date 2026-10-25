@@ -1,0 +1,168 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/wood.tres" id="1_wood"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/wood_light.tres" id="2_wood_light"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/wood_dark.tres" id="3_wood_dark"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/red.tres" id="4_red"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(3.2, 0.3, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(3.2, 0.2, 0.92)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3"]
+top_radius = 0.16
+bottom_radius = 0.16
+height = 3
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.9
+radial_segments = 8
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_5"]
+inner_radius = 0.25
+outer_radius = 0.4
+rings = 32
+ring_segments = 12
+
+[node name="dock" type="StaticBody3D"]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.5)
+shape = SubResource("BoxShape3D_1")
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("2_wood_light")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("2_wood_light")
+
+[node name="Mesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("2_wood_light")
+
+[node name="Mesh7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("2_wood_light")
+
+[node name="Mesh9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("2_wood_light")
+
+[node name="Mesh11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("2_wood_light")
+
+[node name="Mesh13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("2_wood_light")
+
+[node name="Mesh15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("1_wood")
+
+[node name="Mesh16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("2_wood_light")
+
+[node name="Mesh17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.2, 0.5)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh18" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.2, 0.5)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh19" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.2, 5)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh20" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.2, 5)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh21" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.2, 10)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh22" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.2, 10)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh23" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.2, 15)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh24" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.2, 15)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh25" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.45, 15)
+mesh = SubResource("CylinderMesh_4")
+surface_material_override/0 = ExtResource("3_wood_dark")
+
+[node name="Mesh26" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 1.65, 0.6, 14)
+mesh = SubResource("TorusMesh_5")
+surface_material_override/0 = ExtResource("4_red")

@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/leaf.tres" id="1_leaf"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/purple.tres" id="2_purple"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/yellow.tres" id="3_yellow"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.28
+radial_segments = 5
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_2"]
+radius = 0.09
+height = 0.18
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_3"]
+radius = 0.04
+height = 0.08
+radial_segments = 6
+rings = 3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.34
+radial_segments = 5
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.4
+radial_segments = 5
+rings = 1
+
+[node name="flowers_purple" type="Node3D"]
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+mesh = SubResource("CylinderMesh_1")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.55, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34, 0)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("3_yellow")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.17, 0.2)
+mesh = SubResource("CylinderMesh_4")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.55, 0, 0, 0, 1, 0.35, 0.36, 0.2)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.4, 0.2)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("3_yellow")
+
+[node name="Mesh7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.2, 0.25)
+mesh = SubResource("CylinderMesh_5")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.55, 0, 0, 0, 1, -0.3, 0.42, 0.25)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.46, 0.25)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("3_yellow")
+
+[node name="Mesh10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.14, -0.35)
+mesh = SubResource("CylinderMesh_1")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.55, 0, 0, 0, 1, 0.15, 0.3, -0.35)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.34, -0.35)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("3_yellow")
+
+[node name="Mesh13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.17, -0.2)
+mesh = SubResource("CylinderMesh_4")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.55, 0, 0, 0, 1, -0.25, 0.36, -0.2)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.4, -0.2)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("3_yellow")
+
+[node name="Mesh16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.2, -0.15)
+mesh = SubResource("CylinderMesh_5")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.55, 0, 0, 0, 1, 0.45, 0.42, -0.15)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh18" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.46, -0.15)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("3_yellow")

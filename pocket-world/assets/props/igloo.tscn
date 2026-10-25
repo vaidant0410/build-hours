@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/snow.tres" id="1_snow"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/black.tres" id="2_black"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/ice.tres" id="3_ice"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1"]
+radius = 2.2
+height = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2"]
+size = Vector3(1.7, 1.4, 1.8)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3"]
+radius = 2.3
+height = 2.3
+radial_segments = 20
+rings = 10
+is_hemisphere = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.85
+bottom_radius = 0.85
+height = 1.8
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0.6
+bottom_radius = 0.6
+height = 0.05
+radial_segments = 14
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_6"]
+inner_radius = 2.2004
+outer_radius = 2.2604
+rings = 32
+ring_segments = 12
+
+[sub_resource type="TorusMesh" id="TorusMesh_7"]
+inner_radius = 1.9421
+outer_radius = 2.0021
+rings = 32
+ring_segments = 12
+
+[sub_resource type="TorusMesh" id="TorusMesh_8"]
+inner_radius = 1.4118
+outer_radius = 1.4718
+rings = 32
+ring_segments = 12
+
+[node name="igloo" type="StaticBody3D"]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_1")
+
+[node name="Collision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -2.1)
+shape = SubResource("BoxShape3D_2")
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("1_snow")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.5, -2.1)
+mesh = SubResource("CylinderMesh_4")
+surface_material_override/0 = ExtResource("1_snow")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.55, -3.01)
+mesh = SubResource("CylinderMesh_5")
+surface_material_override/0 = ExtResource("2_black")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+mesh = SubResource("TorusMesh_6")
+surface_material_override/0 = ExtResource("3_ice")
+
+[node name="Mesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+mesh = SubResource("TorusMesh_7")
+surface_material_override/0 = ExtResource("3_ice")
+
+[node name="Mesh6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+mesh = SubResource("TorusMesh_8")
+surface_material_override/0 = ExtResource("3_ice")

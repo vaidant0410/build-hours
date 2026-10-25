@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/grass.tres" id="1_grass"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0
+bottom_radius = 0.06
+height = 0.45
+radial_segments = 4
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0
+bottom_radius = 0.06
+height = 0.35
+radial_segments = 4
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3"]
+top_radius = 0
+bottom_radius = 0.06
+height = 0.38
+radial_segments = 4
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0
+bottom_radius = 0.06
+height = 0.3
+radial_segments = 4
+rings = 1
+
+[node name="grass_tuft" type="Node3D"]
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0)
+mesh = SubResource("CylinderMesh_1")
+surface_material_override/0 = ExtResource("1_grass")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5533, -0.0395, 0.832, 0.2922, 0.9446, -0.1494, -0.78, 0.3258, 0.5342, 0.12, 0.175, 0.05)
+mesh = SubResource("CylinderMesh_2")
+surface_material_override/0 = ExtResource("1_grass")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.3574, -0.2528, 0.8991, -0.2922, 0.9446, 0.1494, -0.8871, -0.2093, -0.4115, -0.1, 0.19, 0.06)
+mesh = SubResource("CylinderMesh_3")
+surface_material_override/0 = ExtResource("1_grass")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.9675, 0.2105, 0.1404, 0.1977, 0.9752, -0.0998, -0.1579, -0.0688, -0.985, 0.02, 0.15, -0.1)
+mesh = SubResource("CylinderMesh_4")
+surface_material_override/0 = ExtResource("1_grass")

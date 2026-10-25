@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/leaf.tres" id="1_leaf"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/purple.tres" id="2_purple"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1"]
+radius = 0.6
+
+[sub_resource type="SphereMesh" id="SphereMesh_2"]
+radius = 0.62
+height = 1.24
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_3"]
+radius = 0.48
+height = 0.96
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_4"]
+radius = 0.46
+height = 0.92
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_5"]
+radius = 0.4
+height = 0.8
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_6"]
+radius = 0.08
+height = 0.16
+radial_segments = 8
+rings = 4
+
+[node name="bush_berries" type="StaticBody3D"]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("SphereShape3D_1")
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52, 0.33, 0.12)
+mesh = SubResource("SphereMesh_3")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48, 0.32, -0.1)
+mesh = SubResource("SphereMesh_4")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.3, 0.5)
+mesh = SubResource("SphereMesh_5")
+surface_material_override/0 = ExtResource("1_leaf")
+
+[node name="Mesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62, 0.5, 0)
+mesh = SubResource("SphereMesh_6")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3085, 0.7, 0.5378)
+mesh = SubResource("SphereMesh_6")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0.5, 0.5352)
+mesh = SubResource("SphereMesh_6")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62, 0.7, -0.0052)
+mesh = SubResource("SphereMesh_6")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.304, 0.5, -0.5404)
+mesh = SubResource("SphereMesh_6")
+surface_material_override/0 = ExtResource("2_purple")
+
+[node name="Mesh10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3175, 0.7, -0.5325)
+mesh = SubResource("SphereMesh_6")
+surface_material_override/0 = ExtResource("2_purple")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/white.tres" id="1_white"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/red.tres" id="2_red"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/blue.tres" id="3_blue"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1"]
+radius = 0.35
+height = 0.7
+radial_segments = 12
+rings = 6
+
+[sub_resource type="SphereMesh" id="SphereMesh_2"]
+radius = 0.355
+height = 0.71
+radial_segments = 12
+rings = 6
+
+[node name="beach_ball" type="Node3D"]
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+mesh = SubResource("SphereMesh_1")
+surface_material_override/0 = ExtResource("1_white")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("2_red")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.35, 0, 0.35, 0)
+mesh = SubResource("SphereMesh_2")
+surface_material_override/0 = ExtResource("3_blue")

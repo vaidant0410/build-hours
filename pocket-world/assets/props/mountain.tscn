@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/stone_dark.tres" id="1_stone_dark"]
+[ext_resource type="StandardMaterial3D" path="res://assets/materials/stone.tres" id="2_stone"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0
+bottom_radius = 12
+height = 22
+radial_segments = 9
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0
+bottom_radius = 8
+height = 15
+radial_segments = 9
+rings = 1
+
+[node name="mountain" type="Node3D"]
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+mesh = SubResource("CylinderMesh_1")
+surface_material_override/0 = ExtResource("1_stone_dark")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.5, 3)
+mesh = SubResource("CylinderMesh_2")
+surface_material_override/0 = ExtResource("2_stone")
