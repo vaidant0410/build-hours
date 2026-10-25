@@ -77,6 +77,16 @@ def write_materials():
         "grow_amount": "0.022",
     })
     out.write(os.path.join(ROOT, "assets/materials/outline.tres"))
+    vc = Resource("StandardMaterial3D")
+    vc.props = {
+        "next_pass": vc.ext_res("Material", mat("outline")),
+        "vertex_color_use_as_albedo": "true",
+        "vertex_color_is_srgb": "true",
+        "roughness": "1.0",
+        "diffuse_mode": "3",
+        "specular_mode": "2",
+    }
+    vc.write(os.path.join(ROOT, "assets/materials/toon_vertex_color.tres"))
     for name, (rgb, outline, emission) in PALETTE.items():
         r = Resource("StandardMaterial3D")
         props = {}

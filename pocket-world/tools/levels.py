@@ -110,7 +110,7 @@ def meadow_village(Level):
     L.portal("whispering_woods", "from_village", 0, -56, 0.0, (0.55, 1.0, 0.6))
     L.portal("sunny_shores", "from_village", 56, 0, PI / 2, (1.0, 0.8, 0.4))
     L.portal("frosty_peaks", "from_village", -56, 0, PI / 2, (0.7, 0.85, 1.0))
-    L.spawn("Default", 0, 13, NORTH)
+    L.spawn("Default", 26, 0, WEST)
     L.spawn("from_woods", 0, -49, SOUTH)
     L.spawn("from_shores", 49, 0, WEST)
     L.spawn("from_peaks", -49, 0, EAST)
