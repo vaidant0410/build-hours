@@ -84,7 +84,7 @@ func _show_line() -> void:
 	_text.text = _lines[_line_index]
 	_text.visible_ratio = 0.0
 	_typing = true
-	_next_hint.text = "E ▸" if _line_index < _lines.size() - 1 else "E ✓"
+	_next_hint.text = "[E] next" if _line_index < _lines.size() - 1 else "[E] done"
 	if _source and _source.has_method("on_dialogue_line"):
 		_source.on_dialogue_line()
 
@@ -104,7 +104,7 @@ func _set_player_locked(locked: bool) -> void:
 
 
 func _update_friends() -> void:
-	_friends.text = "♥ Friends met: %d / %d" % [GameState.friends_met.size(), GameState.TOTAL_FRIENDS]
+	_friends.text = "Friends met: %d / %d" % [GameState.friends_met.size(), GameState.TOTAL_FRIENDS]
 
 
 func _pulse(node: Control) -> void:
@@ -141,7 +141,7 @@ func _build_ui() -> void:
 	root.add_child(friends_panel)
 
 	var help := _label(16, Color(1, 1, 1, 0.85))
-	help.text = "WASD move · Shift sprint · Space jump · E talk · Click to look around (Esc frees mouse) · Z/C turn camera"
+	help.text = "WASD move  |  Shift sprint  |  Space jump  |  E talk  |  Click to look around (Esc frees mouse)  |  Z/C turn camera"
 	help.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
 	help.offset_left = 16
 	help.offset_top = -34
